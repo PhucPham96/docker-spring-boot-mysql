@@ -14,4 +14,5 @@ ENTRYPOINT ["java", "-jar", "/docker-spring-boot-mysql.jar"]
 #gan tag name cho 1 image -> docker build -t docker-spring-boot-mysql .
 #kiem tra danh sach image -> docker images
 #run image -> docker run -p 9200:9100 docker-spring-boot-mysql
+#
 
