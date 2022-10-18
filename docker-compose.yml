@@ -1,0 +1,37 @@
+version: '3.8'
+services:
+  mysqldb:
+    image: mysql:8.0.30
+    container_name: mysql-db
+    environment:
+      - MYSQL_ROOT_PASSWORD=Nokia12345@
+      - MYSQL_DATABASE=phuc_test_01
+#      - MYSQL_USER=root
+#      - MYSQL_PASSWORD=Nokia12345@
+    ports:
+      - "3307:3306"
+    restart: always
+    volumes:
+#      - ./init.sql:/docker-entrypoint-initdb.d/1.sql
+      - db:/var/lib/mysql
+
+  springBootMySQLService:
+    image: service-01
+    container_name: service-01
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "9200:9100"
+    restart: always
+    depends_on:
+      - mysqldb
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysqldb:3306/phuc_test_01?autoReconnect=true&failOverReadOnly=false&maxReconnects=10
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: Nokia12345@
+    stdin_open: true
+    tty: true
+
+volumes:
+  db:

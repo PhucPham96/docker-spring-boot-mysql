@@ -8,12 +8,12 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "account")
+@Table(name = "attachment")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-public class Account {
+public class Attachment {
 
     @Id
     @GeneratedValue
@@ -22,6 +22,6 @@ public class Account {
     @Column(nullable = false, length = 100)
     private String name;
 
-    @Column(name = "email")
-    private String email;
+    @Column(name = "path")
+    private String path;
 }
