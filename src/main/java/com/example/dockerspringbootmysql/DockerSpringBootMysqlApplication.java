@@ -26,7 +26,9 @@ public class DockerSpringBootMysqlApplication {
 //
 //		FirebaseOptions options = new FirebaseOptions.Builder()
 //				.setCredentials(GoogleCredentials.fromStream(serviceAccount))
-//				.setStorageBucket("PHUC_BUCKET")
+//				.setProjectId("fir-tutorial-b7fcb")
+////				.setDatabaseUrl("https://<DATABASE_NAME>.firebaseio.com/")
+////				.setStorageBucket("PHUC_BUCKET")
 //				.build();
 //
 //		if (FirebaseApp.getApps().isEmpty()) {

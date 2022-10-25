@@ -6,8 +6,8 @@ FROM openjdk:17
 EXPOSE 9100
 #container tao ra se expose ra port 9100
 
-#COPY ./src/main/resources/templates/* /templates
-#COPY ./target/*.jar /docker-spring-boot-mysql.jar
+COPY ./src/main/resources/templates/* /templates
+COPY ./target/*.jar /docker-spring-boot-mysql.jar
 ADD target/docker-spring-boot-mysql.jar docker-spring-boot-mysql.jar
 #copy file docker-spring-boot-mysql.jar trong thu muc target sau khi dong goi ung dung vao trong container voi ten docker-spring-boot-mysql.jar
 #"./wait-for-it.sh", "db:3306", "--",

@@ -19,39 +19,42 @@ public class VNPayRequestDto {
 //    @JsonProperty("vnp_Version")
 //    private String vnpTmnCode;
 
-    @JsonProperty("vnp_Version")
+    @JsonProperty("vnp_Amount")
     private String vnpAmount;
 
-    @JsonProperty("vnp_Version")
+    @JsonProperty("vnp_BankCode")
     private String vnpBankCode;
+//
+//    @JsonProperty("vnp_CreateDate")
+//    private String vnpCreateDate;
 
-    @JsonProperty("vnp_Version")
-    private String vnpCreateDate;
+    @JsonProperty("vnp_Command")
+    private String vnpCommand;
 
-    @JsonProperty("vnp_Version")
-    private String vnpCurrCode;
+//    @JsonProperty("vnp_CurrCode")
+//    private String vnpCurrCode = "VND";
 //
 //    @JsonProperty("vnp_Version")
 //    private String vnpIpAddr;
 
-    @JsonProperty("vnp_Version")
+    @JsonProperty("vnp_Locale")
     private String vnpLocale;
 
-    @JsonProperty("vnp_Version")
+    @JsonProperty("vnp_OrderInfo")
     private String vnpOrderInfo;
 
-    @JsonProperty("vnp_Version")
+    @JsonProperty("vnp_OrderType")
     private String vnpOrderType;
 
-    @JsonProperty("vnp_Version")
-    private String vnpReturnUrl;
+//    @JsonProperty("vnp_ReturnUrl")
+//    private String vnpReturnUrl;
 
-    @JsonProperty("vnp_Version")
-    private String vnpTxnRef;
-
-    @JsonProperty("vnp_Version")
-    private String vnpSecureHash;
-
-    @JsonProperty("language")
-    private String language;
+//    @JsonProperty("vnp_Version")
+//    private String vnpTxnRef;
+//
+//    @JsonProperty("vnp_Version")
+//    private String vnpSecureHash;
+//
+//    @JsonProperty("language")
+//    private String language;
 }
