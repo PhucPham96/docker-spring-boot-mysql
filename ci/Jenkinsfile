@@ -6,10 +6,5 @@ pipeline {
                 sh 'git clone https://github.com/PhucPham96/docker-spring-boot-mysql-demo.git'
             }
         }
-        stage('Build') {
-            steps {
-                sh 'mvn clean install -f docker-spring-boot-mysql-demo/pom.xml'
-            }
-        }
     }
 }
