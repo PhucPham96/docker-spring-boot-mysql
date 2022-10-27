@@ -21,3 +21,9 @@ ENTRYPOINT ["java", "-jar", "/docker-spring-boot-mysql.jar"]
 #run image -> docker run -p 9200:9100 docker-spring-boot-mysql
 #
 
+
+
+#get jenkins tu docker hub
+#docker pull jenkins/jenkins
+#run jenkins
+#docker run -p 8080:8080 -p 50000:50000 jenkins/jenkins:latest
