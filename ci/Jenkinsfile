@@ -1,10 +1,46 @@
 pipeline {
     agent any
+    tools {
+        maven 'maven-3.8.6'
+    }
+    environment {
+        docker_hub_login = credentials('dockerhub-login')
+    }
     stages {
-        stage('Clone') {
+        stage('Build Maven') {
             steps {
-                sh 'git clone https://github.com/PhucPham96/docker-spring-boot-mysql-demo.git'
+                checkout([$class: 'GitSCM', branches: [[name: '*/develop']], extensions: [], userRemoteConfigs: [[credentialsId: '83fcbd7f-09cf-4adb-9175-17f3b710ba4a', url: 'https://github.com/PhucPham96/docker-spring-boot-mysql-demo.git']]])
+                bat 'mvn clean install'
             }
+        }
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    bat 'docker build -t docker-spring-boot-mysql .'
+                }
+            }
+        }
+        stage('Login Docker Hub') {
+            steps {
+                // script {
+                    // withCredentials([string(credentialsId: 'dockerhub-pw4', variable: 'dockerhub-pw4')]) {
+                        // bat 'docker login -u $docker_hub_login --password-stdin'
+                        // bat 'docker login -u phucpham9xx -p ${dockerhub-pw4}'
+                        bat 'docker login -u phucpham9xx -p Nokia12345@@'
+                    // }
+                // }
+            }
+        }
+        stage('Push Image To DockerHub') {
+            steps {
+                bat 'docker tag docker-spring-boot-mysql phucpham9xx/docker-spring-boot-mysql'
+                bat 'docker push phucpham9xx/docker-spring-boot-mysql'
+            }
+        }
+    }
+    post {
+        always {
+            bat 'docker logout'
         }
     }
 }
