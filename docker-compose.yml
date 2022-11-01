@@ -24,7 +24,7 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "9200:9100"
+      - "9092:9091"
     restart: always
     depends_on:
       - mysqldb
