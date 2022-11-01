@@ -3,7 +3,7 @@ FROM openjdk:11
 #neu local k co image nay thi docker se tim kiem va pull image tu docker hub
 #sau khi tim kiem thanh cong, docker se pull image co moi truong jdk17 ve local va san sang xay dung container voi moi truong do
 
-EXPOSE 9100
+EXPOSE 9091
 #container tao ra se expose ra port 9100
 
 #COPY ./src/main/resources/templates/* /templates
