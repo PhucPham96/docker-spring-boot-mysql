@@ -26,3 +26,4 @@ ENTRYPOINT ["java", "-jar", "/docker-spring-boot-mysql.jar"]
 #docker pull jenkins/jenkins
 #run jenkins
 #docker run -p 8080:8080 -p 50000:50000 jenkins/jenkins:latest
+#
