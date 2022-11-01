@@ -1,5 +1,5 @@
-FROM openjdk:17
-#base cua iamge co ten openjdk:17
+FROM openjdk:11
+#base cua iamge co ten openjdk:11
 #neu local k co image nay thi docker se tim kiem va pull image tu docker hub
 #sau khi tim kiem thanh cong, docker se pull image co moi truong jdk17 ve local va san sang xay dung container voi moi truong do
 
@@ -20,7 +20,6 @@ ENTRYPOINT ["java", "-jar", "/docker-spring-boot-mysql.jar"]
 #kiem tra danh sach image -> docker images
 #run image -> docker run -p 9200:9100 docker-spring-boot-mysql
 #
-
 
 
 #get jenkins tu docker hub

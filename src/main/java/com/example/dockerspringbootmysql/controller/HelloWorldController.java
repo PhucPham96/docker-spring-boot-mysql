@@ -11,4 +11,10 @@ public class HelloWorldController {
     public ResponseEntity<Object> helloWorld() {
         return ResponseEntity.ok("Hello World 1");
     }
+
+    @GetMapping("")
+    public ResponseEntity<Object> init() {
+        return ResponseEntity.ok("Init");
+    }
+
 }
